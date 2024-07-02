@@ -44,7 +44,7 @@ If running in Node.js, you can batch generate topologies based on input data and
 
 I modeled the design after Echarts' approach to how to use the API.
 
-You just need to download file `example/index.html` to quickly learn how to use and see the display effect. Or read the information below，although it's just the copy of `index.html`
+
 
 ### 1. Download
 
@@ -53,6 +53,10 @@ download` dist/ntv.bundle.js`.
 I packaged all the dependent libraries (d3 and Jquery) and functionality into this file via **webpack**, and I just needed to download the file to use the full functionality
 
 ### 2. Use
+
+You just need to download file `example/index.html` to quickly learn how to use and see the display effect. Or read the information below，although it's just the copy of `index.html`
+
+**Attention: modify the path of `ntv.bundle.js` in the `index.html`**
 
 ```
 <!DOCTYPE html>
