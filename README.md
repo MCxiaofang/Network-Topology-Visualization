@@ -1,9 +1,9 @@
 # Network Topology Visualization
-Based on JavaScript and d3.js(not need to download d3, alread included in the project), this project is to visualize the network topology.
+Based on JavaScript and d3.js(not need to download d3, already included in the project), this project is to visualize the network topology.
 
 The most typical scenario is visualizing traceroute results.
 
-Input data format like this
+Input:  Input data format like this
 
 ```
 // .... 每个节点的信息
@@ -34,7 +34,7 @@ Output: a svg container
 
 If you run it in a browser, you can generate dynamic charts similar to echarts
 
-If running in nodejs, you can batch generate topologies based on input data and save.SVG and.png (which I implemented but haven't commit yet)
+If running in Node.js, you can batch generate topologies based on input data and save.SVG and.png (which I implemented but haven't commit yet)
 
 ![image-20240702170014332](./images/README/image-20240702170014332.png)
 
@@ -48,7 +48,9 @@ You just need to download file `example/index.html` to quickly learn how to use 
 
 ### 1. Download
 
-download ` dist/ntv.bundle.js`
+download` dist/ntv.bundle.js`. 
+
+I packaged all the dependent libraries (d3 and Jquery) and functionality into this file via **webpack**, and I just needed to download the file to use the full functionality
 
 ### 2. Use
 
@@ -76,6 +78,14 @@ download ` dist/ntv.bundle.js`
         style: {
           "width": 100,
           "height": 100,
+          "x_gap": 90,
+          "y_gap": 70,
+          "radius": 6,
+          "max_radius": 20,
+          "stroke_width": 2,
+          "margin_ver": 20,
+          "margin_hor": 40,
+          "offset_ver": 30
         },
         meta: {
           "color_label": "asn",
@@ -92,7 +102,14 @@ download ` dist/ntv.bundle.js`
 
 ```
 
+## TODO
 
+- [ ] option.style: add description 
+- [ ] merge Node.js functionality support and add batch plotting and save
+- [ ] merge Browser svg picture download function
+- [ ] A better algorithm calculates the Y-axis position of the nodes, reducing the crossing of edges
+
+Progress depends on your needs
 
 ## After
 
@@ -103,3 +120,5 @@ zhaoyunlei22s@ict.ac.cn
 这是我在工程项目的中的一个需求，可视化traceroute结果，但是找遍了各大前端可视化库(例如Echarts)，都无法实现，所以选择使用d3.js从底层自己写了一个，希望能帮助到有相关需求的人。
 
 这是我的第一个完整开源库，我没有深入研究过Javascript，如果发布基于Javascript的开源库也是照猫画虎十分粗糙，有任何问题（代码功能，开源库的格式，证书，安全等）感谢各位大佬指正。
+
+欢迎大家star！！！
