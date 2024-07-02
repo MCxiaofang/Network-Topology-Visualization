@@ -123,6 +123,7 @@ function calPos(data, s, meta) {
       points[ip]["key"] = ip;
 
       for(let label of meta.labels) {
+          if(label === "key") continue;
           if(infos[ip] === undefined || infos[ip][label] === null) {
               points[ip][label] = 'Unknown';
           }
